@@ -41,10 +41,27 @@
 
 
 // professional way of taking user input
-let username;
-document.getElementById(`mySubmit`).onclick = function () {
-    username = document.getElementById(`myText`).value;
-    console.log(username);
-    document.getElementById(`greeting`).textContent = `Welcome ${username}`;
-}
+// let username;
+// document.getElementById(`mySubmit`).onclick = function () {
+//     username = document.getElementById(`myText`).value;
+//     console.log(username);
+//     document.getElementById(`greeting`).textContent = `Welcome ${username}`;
+// }
 
+
+// .checked property in js = .checked is the property that determines the checked state of an
+// HTML checkbox or radiobutton element
+
+// string methods in js
+// hint : string methods in js are almost similar to that in java
+let username = "Bro Code"
+console.log(username.charAt(0))
+console.log(username.length);
+let result = username.includes(" ")
+console.log(result);
+let phoneNo = "123-456-789"
+phoneNo = phoneNo.replaceAll("-", "");
+console.log(phoneNo);
+console.log(phoneNo.padEnd(20, "0"));
+phoneNo = phoneNo.padStart(20, "0");
+console.log(phoneNo);
