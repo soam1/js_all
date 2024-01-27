@@ -88,3 +88,25 @@
 // === strict comparison operator (if values and datatype both are equal)
 // != inequality operator
 // !== strict inequality operator
+
+// arrays in js
+
+// spread operator in js
+/*
+... allows an iterable such as an array or string to be expanded into separate elements(unpacks the elements)
+*/
+let numArray = [1, 2, 3, 4, 5]
+let maxi = Math.max(...numArray);
+console.log(maxi);
+
+let username = "Akash Soam"
+let letters = [...username].join("-")
+console.log(letters);
+
+let fruits = ["Apple", "Orange", "Banana"]
+let newFruits = [...fruits]
+console.log(newFruits);
+let vegetables = ["Potato", "Carrot", "Capsicum"]
+let foods = [...fruits, ...vegetables]
+console.log(foods);
+
