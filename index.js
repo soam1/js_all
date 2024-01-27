@@ -95,18 +95,36 @@
 /*
 ... allows an iterable such as an array or string to be expanded into separate elements(unpacks the elements)
 */
-let numArray = [1, 2, 3, 4, 5]
-let maxi = Math.max(...numArray);
-console.log(maxi);
+// let numArray = [1, 2, 3, 4, 5]
+// let maxi = Math.max(...numArray);
+// console.log(maxi);
 
-let username = "Akash Soam"
-let letters = [...username].join("-")
-console.log(letters);
+// let username = "Akash Soam"
+// let letters = [...username].join("-")
+// console.log(letters);
 
-let fruits = ["Apple", "Orange", "Banana"]
-let newFruits = [...fruits]
-console.log(newFruits);
-let vegetables = ["Potato", "Carrot", "Capsicum"]
-let foods = [...fruits, ...vegetables]
-console.log(foods);
+// let fruits = ["Apple", "Orange", "Banana"]
+// let newFruits = [...fruits]
+// console.log(newFruits);
+// let vegetables = ["Potato", "Carrot", "Capsicum"]
+// let foods = [...fruits, ...vegetables]
+// console.log(foods);
 
+// rest parameters
+/*
+(...rest) allow a function to work with a variable number of arguments by bundling them into an array
+spread = expands an array into separate elements
+rest = bundles separate elements into an array
+
+*/
+function openFridge(...foods) {
+    console.log(foods);
+}
+let food1 = "dahi";
+let food2 = "milk chocolate";
+let food3 = "badam ragda";
+let food4 = "potatoes";
+let food5 = "green moong";
+
+
+openFridge(food1, food2, food3, food4, food5);
