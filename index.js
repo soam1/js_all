@@ -54,14 +54,29 @@
 
 // string methods in js
 // hint : string methods in js are almost similar to that in java
-let username = "Bro Code"
-console.log(username.charAt(0))
-console.log(username.length);
-let result = username.includes(" ")
-console.log(result);
-let phoneNo = "123-456-789"
-phoneNo = phoneNo.replaceAll("-", "");
-console.log(phoneNo);
-console.log(phoneNo.padEnd(20, "0"));
-phoneNo = phoneNo.padStart(20, "0");
-console.log(phoneNo);
+// let username = "Bro Code"
+// console.log(username.charAt(0))
+// console.log(username.length);
+// let result = username.includes(" ")
+// console.log(result);
+// let phoneNo = "123-456-789"
+// phoneNo = phoneNo.replaceAll("-", "");
+// console.log(phoneNo);
+// console.log(phoneNo.padEnd(20, "0"));
+// phoneNo = phoneNo.padStart(20, "0");
+// console.log(phoneNo);
+
+
+// string slicing  = creating a substring from a portion of a string
+// String.slice(start, end) => string from index start to end -1
+// (ending index is exclusive)
+let fullName = "Bro Code";
+fullName = "Broseph Code";
+let firstName = fullName.slice(0, 2);
+console.log(firstName);
+let lastName = fullName.slice(-1);
+console.log(lastName);
+firstName = fullName.slice(0, fullName.indexOf(``));
+lastName = fullName.slice(fullName.indexOf(``))
+console.log(firstName, lastName);
+
