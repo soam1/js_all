@@ -70,13 +70,21 @@
 // string slicing  = creating a substring from a portion of a string
 // String.slice(start, end) => string from index start to end -1
 // (ending index is exclusive)
-let fullName = "Bro Code";
-fullName = "Broseph Code";
-let firstName = fullName.slice(0, 2);
-console.log(firstName);
-let lastName = fullName.slice(-1);
-console.log(lastName);
-firstName = fullName.slice(0, fullName.indexOf(``));
-lastName = fullName.slice(fullName.indexOf(``))
-console.log(firstName, lastName);
+// let fullName = "Bro Code";
+// fullName = "Broseph Code";
+// let firstName = fullName.slice(0, 2);
+// console.log(firstName);
+// let lastName = fullName.slice(-1);
+// console.log(lastName);
+// firstName = fullName.slice(0, fullName.indexOf(``));
+// lastName = fullName.slice(fullName.indexOf(``))
+// console.log(firstName, lastName);
 
+
+// equality and not equality in js
+
+// = assignment operator
+// == comparison operator (if values are equal)
+// === strict comparison operator (if values and datatype both are equal)
+// != inequality operator
+// !== strict inequality operator
