@@ -131,3 +131,41 @@ let food5 = "green moong";
 
 openFridge(food1, food2, food3, food4, food5);
 */
+
+// CALLBACK IN JS
+/*
+callback = a function that is passed as an argument to another fucntion
+used to handle asynchronous operations:
+1.reading a file
+2.network requests
+3.interacting with databases
+
+"Hey when you're done call this next"
+*/
+
+hello(leave);
+function hello(callback) {
+    console.log(`Hello`);
+    callback();
+}
+function leave() {
+    console.log("Please leave");
+}
+function goodbye() {
+    console.log(`Goodbye`);
+}
+
+function sum(callback, x, y) {
+    let result = x + y;
+    callback(result);
+}
+function displayConsole(restul) {
+    console.log(restul);
+}
+sum(displayConsole, 2, 3);
+
+function displayWebpage(result) {
+    document.getElementById(`myH1`).textContent = result
+}
+
+sum(displayWebpage, 3, 7);
