@@ -536,6 +536,8 @@ console.log(numbers);
 // allow for private variables and state maintenance
 // used frequently in js frameworks: React, Vue, Angular
 
+
+/*
 function outer() {
     let message = "Hello";
 
@@ -596,7 +598,10 @@ counter.increment();
 const currCount = counter.getCount();
 console.log(currCount);
 
+*/
+
 // setTimeOut() = function in js that allows you to schedule the execution of a function after an amount of time(milliseconds)
 // Times are appropriate (varies based on the workload of the javascript runtime environment)
 // setTimeout(callback, delay);
+
 
