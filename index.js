@@ -372,25 +372,83 @@ console.log(person1.isEmployed);
 */
 // this  =reference to the object where THIS is used (the object depends on the immediate context) person.name = this.name
 
-const person1 = {
-    name: "Spongebob",
-    favFood: "hamburgers",
-    sayHello: function () { console.log(`Hi! I am ${name}`); },
-    sayHello: function () { console.log(`Hi! I am ${this.name}`); },
-    tellFav: function () { console.log(`Hi! I eat only ${this.favFood}`); },
-}
-person1.sayHello();
-person1.tellFav();
+// const person1 = {
+//     name: "Spongebob",
+//     favFood: "hamburgers",
+//     sayHello: function () { console.log(`Hi! I am ${name}`); },
+//     sayHello: function () { console.log(`Hi! I am ${this.name}`); },
+//     tellFav: function () { console.log(`Hi! I eat only ${this.favFood}`); },
+// }
+// person1.sayHello();
+// person1.tellFav();
 
 // constructors in js
 
 // constructor = special method for defining the properties and methods of objects
-function Car(make, model, year, color) {
-    this.make = make;
-    this.model = model;
-    this.year = year;
-    this.color = color;
+// function Car(make, model, year, color) {
+//     this.make = make;
+//     this.model = model;
+//     this.year = year;
+//     this.color = color;
+// }
+
+// const car1 = new Car("Ford", "Mustang", 2024, "red");
+// console.log(car1.make, car1.color, car1.year, car1.model);
+
+// classes in js
+// class = (ES6 feature) provides a more structured and cleaner way to work with objects compared to traditional constructor functions ex. static keyword, encapsulation, inheritance
+class Product {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+    displayProduct = function () {
+        console.log(`Product: ${this.name}`);
+        console.log(`price: ${this.price.toFixed(2)}`);
+    }
+    calculateTotal = function (salesTax) {
+        return this.price + (this.price * salesTax);
+    }
+
 }
 
-const car1 = new Car("Ford", "Mustang", 2024, "red");
-console.log(car1.make, car1.color, car1.year, car1.model);
+// function Product(name, price) {
+//     this.name = name;
+//     this.price = price;
+//     this.displayProduct = function () {
+//         console.log(`Product: ${this.name}`);
+//         console.log(`price: ${this.price.toFixed(2)}`);
+//     };
+//     this.calculateTotal = function (salesTax) {
+//         return this.price + (this.price * salesTax);
+//     }
+// }
+
+const salesTax = 0.05;
+const product1 = new Product("Shirt", 15.99);
+const product2 = new Product("Pants", 19.99);
+const product3 = new Product("underwear", 109.99);
+
+product1.displayProduct();
+
+const totalPrices = product1.calculateTotal(salesTax);
+console.log(`Total price with tax: ${totalPrices}`);
+
+
+// static keyword in js
+// static = keyword that defines properties or methods that belong to a class itself rather than the objects created from that class (class owns anything static, not the objects)
+
+// inheritance = allows a new class to inherit properties and methods from an existing class (parent -> child)
+// helps with code reusability
+// done using extends keyword like in java
+
+// super keyword
+// super = keyword is used in classes to call the constructor or access the properties and methods of a parent  (super class)
+// this  = this object
+// super = the parent
+
+// getters and setters in js
+// getter = special method that makes a property readable
+// setter = special method that makes a property writable
+// validate and modify a value when reading or writing a property
+
