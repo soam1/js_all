@@ -267,3 +267,48 @@ function sum(previous, next) {
 const total = prices.reduce(sum);
 console.log(total);
 */
+
+// function declaration = define a reusable block of code that performs a specific task
+function hello() {
+    console.log("hello ");
+}
+// function expression = a way to define functions as values of variables
+const hlo = function () {
+    console.log("hello");
+}
+hlo();
+
+// setTimeout(callback, time in ms);
+// setTimeout(hello, 3000);
+// setTimeout(function () {
+//     console.log("Hello brother");
+// }, 3000);
+
+
+/*
+const numbers = [1, 2, 3, 4, 5, 6];
+function square(element) {
+    return Math.pow(element, 2);
+}
+const squares = numbers.map(square);
+console.log(squares);
+
+const squares2 = numbers.map(function (element) { return Math.pow(element, 2); });
+console.log(squares2);
+
+const evenNums = numbers.filter(function (ele) {
+    return ele % 2 === 0;
+});
+console.log(evenNums);
+
+const prod = numbers.reduce(function (accumulator, thisEle) {
+    return accumulator * thisEle;
+});
+console.log(prod);
+
+// usecases of function exression
+// 1.callbacks is asynchronous operations
+// 2.higher-order functions
+// 3.closures
+// 4.even listeners
+*/
