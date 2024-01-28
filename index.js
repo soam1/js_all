@@ -179,25 +179,46 @@ sum(displayWebpage, 3, 7);
  * behind the scenes: elements, index, array are provided
  */
 
+/*
+
 let numbers = [1, 3, 4, 5, 6]
 numbers.forEach(display);
 numbers.forEach(doubleIt);
 function display(element) {
-    console.log(element);
+   console.log(element);
 }
 function doubleIt(element) {
-    element *= 2;
-    console.log(element);
+   element *= 2;
+   console.log(element);
 }
 
 let fruits = ["apple", "orange", "banana", "coconut"];
 function display(element) {
-    console.log(element);
+   console.log(element);
 }
 fruits.forEach(display);
 
 function displayUpperCase(element) {
-    element = element.toUpperCase();
-    console.log(element);
+   element = element.toUpperCase();
+   console.log(element);
 }
 fruits.forEach(displayUpperCase);
+
+*/
+
+// map() method in js
+//.map() = accepts a callback and applies that function to each element of an array, then returns a new array(it is very similar to forEach except that map returns a new array)
+
+const numbers = [1, 3, 4, 5, 2];
+function square(element) {
+    return Math.pow(element, 2);
+}
+function cube(element) {
+    return Math.pow(element, 3);
+}
+
+const arr = numbers.map(square);
+console.log(arr);
+
+const arrr = numbers.map(cube);
+console.log(arrr);
