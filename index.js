@@ -325,6 +325,7 @@ console.log(prod);
 
 // hello();
 
+/*
 const hlo = () => { console.log("hello there"); }
 const hi = () => console.log("hi");
 hlo();
@@ -337,3 +338,59 @@ const bro = (personName, age) => {
 }
 yeahbuddy("Soam");
 bro("Soam", 20);
+*/
+
+// OBJECTS IN JS
+// objects = a collection of related properties and/or methods can represent real world projects (people, product, places)
+// method is a function that belongs to an object
+// object = {key:value, function()}
+
+/*
+
+const person1 = {
+    firstName: "Spongebob",
+    lastName: "squarepants",
+    age: 30,
+    isEmployed: true,
+    sayHello: function () { console.log(`Hi I am Spongebob!`); },
+    sayBye: function () { console.log(`With this squarepants wishes you goodbye`); }
+};
+const person2 = {
+    firstName: "Akash",
+    lastName: "Soam",
+    age: 32,
+    isEmployed: false,
+    sayHello: () => { console.log(`Hey I am Akash!`); },
+    sayBye: function () { console.log(` wishing you goodbye`); }
+};
+
+console.log(person1.firstName);
+console.log(person1.lastName);
+console.log(person1.age);
+console.log(person1.isEmployed);
+
+*/
+// this  =reference to the object where THIS is used (the object depends on the immediate context) person.name = this.name
+
+const person1 = {
+    name: "Spongebob",
+    favFood: "hamburgers",
+    sayHello: function () { console.log(`Hi! I am ${name}`); },
+    sayHello: function () { console.log(`Hi! I am ${this.name}`); },
+    tellFav: function () { console.log(`Hi! I eat only ${this.favFood}`); },
+}
+person1.sayHello();
+person1.tellFav();
+
+// constructors in js
+
+// constructor = special method for defining the properties and methods of objects
+function Car(make, model, year, color) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+}
+
+const car1 = new Car("Ford", "Mustang", 2024, "red");
+console.log(car1.make, car1.color, car1.year, car1.model);
