@@ -516,7 +516,7 @@ displayPerson(person2);
 // Sorts elements in string in lexicographic order , not alpbhabetical
 // lexicographic = (alphabet+numbers+symbols) as strings
 
-
+/*
 let numbers = [7, 6, 5, 2, 3, 4, 9, 10, 1, 8];
 numbers.sort();//see [1, 10, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(numbers);
@@ -525,3 +525,78 @@ console.log(numbers);
 //see [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 numbers.sort((a, b) => b - a);//sorting in reverse order
 console.log(numbers);
+
+*/
+
+// shuffling an array in js
+// shuffling an array using fisher-yates algo
+
+// closure in js
+// closure = a function defined inside of another function, the inner function has access to the variables and scope of the outer function .
+// allow for private variables and state maintenance
+// used frequently in js frameworks: React, Vue, Angular
+
+function outer() {
+    let message = "Hello";
+
+    function inner() {
+        console.log(message);
+    }
+    inner();
+}
+
+outer();
+
+
+function increment() {
+    let count = 0;
+    count++;
+    console.log(`count increased to ${count}`);
+}
+
+increment();
+increment();
+increment();
+increment();
+increment();
+increment();
+
+function createCounter() {
+    let count = 0;
+    function increment() {
+        count++;
+        console.log(`count increased to ${count}`);
+    }
+    increment();
+    increment();
+    increment();
+    increment();
+}
+
+createCounter();
+
+function createCounter1() {
+    let count = 0;
+    function increment() {
+        count++;
+        console.log(`count increased to ${count}`);
+    }
+    function getCount() {
+        return count;
+    }
+    // return { increment, increment };
+    return { increment, getCount };
+}
+const counter = createCounter1();//this will return an object that has an increment function
+counter.increment();
+counter.increment();
+counter.increment();
+counter.increment();
+counter.increment();
+const currCount = counter.getCount();
+console.log(currCount);
+
+// setTimeOut() = function in js that allows you to schedule the execution of a function after an amount of time(milliseconds)
+// Times are appropriate (varies based on the workload of the javascript runtime environment)
+// setTimeout(callback, delay);
+
