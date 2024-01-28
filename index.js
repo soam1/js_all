@@ -143,6 +143,7 @@ used to handle asynchronous operations:
 "Hey when you're done call this next"
 */
 
+/*
 hello(leave);
 function hello(callback) {
     console.log(`Hello`);
@@ -169,3 +170,34 @@ function displayWebpage(result) {
 }
 
 sum(displayWebpage, 3, 7);
+
+ */
+
+/*
+ forEach() = method used to iterate over the elements of an array and apply a specific function (callback) to each element
+ array.forEach(callback)
+ * behind the scenes: elements, index, array are provided
+ */
+
+let numbers = [1, 3, 4, 5, 6]
+numbers.forEach(display);
+numbers.forEach(doubleIt);
+function display(element) {
+    console.log(element);
+}
+function doubleIt(element) {
+    element *= 2;
+    console.log(element);
+}
+
+let fruits = ["apple", "orange", "banana", "coconut"];
+function display(element) {
+    console.log(element);
+}
+fruits.forEach(display);
+
+function displayUpperCase(element) {
+    element = element.toUpperCase();
+    console.log(element);
+}
+fruits.forEach(displayUpperCase);
