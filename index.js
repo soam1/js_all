@@ -117,6 +117,8 @@ spread = expands an array into separate elements
 rest = bundles separate elements into an array
 
 */
+
+/*
 function openFridge(...foods) {
     console.log(foods);
 }
@@ -128,3 +130,4 @@ let food5 = "green moong";
 
 
 openFridge(food1, food2, food3, food4, food5);
+*/
