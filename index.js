@@ -471,7 +471,7 @@ const colors = ["red", "green", "blue", "black", "white"];
 [colors[0], colors[4]] = [colors[4], colors[0]];
 console.log(colors);
 
-// ex3 = assign array elements to variables 
+// ex3 = assign array elements to variables
 const [firstColor, secondcolor, thirColor, ...extraColors] = colors;
 console.log(firstColor);
 console.log(secondcolor);
@@ -501,3 +501,27 @@ function displayPerson({ firstName, lastName, age, job = "unemployed" }) {
 displayPerson(person2);
 
 */
+// nested objects = objects inside of other objects.
+// allows you to represent more complex data structures
+// child object is enclosed by a parent object
+// Person{Address{}, ContactInfo{}}
+// ShoppingCart{Keyboard{}, Mouse{}, Monitor{}}
+
+
+// you can also create array of objects
+// const arr = [{}, {}, {}, {}];
+
+
+// sort() = method used to sort elements of an array in place.
+// Sorts elements in string in lexicographic order , not alpbhabetical
+// lexicographic = (alphabet+numbers+symbols) as strings
+
+
+let numbers = [7, 6, 5, 2, 3, 4, 9, 10, 1, 8];
+numbers.sort();//see [1, 10, 2, 3, 4, 5, 6, 7, 8, 9]
+console.log(numbers);
+numbers.sort((a, b) => a - b);
+console.log(numbers);
+//see [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers.sort((a, b) => b - a);//sorting in reverse order
+console.log(numbers);
