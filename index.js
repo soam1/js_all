@@ -209,6 +209,8 @@ fruits.forEach(displayUpperCase);
 // map() method in js
 //.map() = accepts a callback and applies that function to each element of an array, then returns a new array(it is very similar to forEach except that map returns a new array)
 
+
+/*
 const numbers = [1, 3, 4, 5, 2];
 function square(element) {
     return Math.pow(element, 2);
@@ -222,3 +224,46 @@ console.log(arr);
 
 const arrr = numbers.map(cube);
 console.log(arrr);
+*/
+
+// .filter() = creates a new array by filtering out elements based on the condition of the callback
+// Returns the elements of an array that meet the condition specified in a callback function.
+
+/*
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function isEven(element) {
+    return element % 2 === 0;
+}
+function isOdd(element) {
+    return element % 2 !== 0;
+}
+
+let evenNums = nums.filter(isEven);
+console.log(evenNums);
+let oddNums = nums.filter(isOdd);
+console.log(oddNums);
+
+const ages = [16, 15, 19, 20, 18, 18, 14, 49];
+function isAnAdult(element) {
+    return (element >= 18);
+}
+const adultsInClass = ages.filter(isAnAdult);
+console.log(adultsInClass);
+
+*/
+//.reduce() = reduces the elements of an array to a single value
+
+/*
+const prices = [343, 49, 13093, 1212, 599, 799];
+// function sum(accumulator, element) {
+//     accumulator += element;
+//     return accumulator;
+// }
+function sum(previous, next) {
+    previous += next;
+    return previous;
+}
+const total = prices.reduce(sum);
+console.log(total);
+*/
