@@ -269,6 +269,7 @@ console.log(total);
 */
 
 // function declaration = define a reusable block of code that performs a specific task
+/*
 function hello() {
     console.log("hello ");
 }
@@ -277,6 +278,7 @@ const hlo = function () {
     console.log("hello");
 }
 hlo();
+*/
 
 // setTimeout(callback, time in ms);
 // setTimeout(hello, 3000);
@@ -312,3 +314,26 @@ console.log(prod);
 // 3.closures
 // 4.even listeners
 */
+
+// arrow functions = a concise way to write function expressions good for simple functions that you use only once
+
+// (parameters)=> some code
+
+// const hello = function () {
+//     console.log("hello");
+// }
+
+// hello();
+
+const hlo = () => { console.log("hello there"); }
+const hi = () => console.log("hi");
+hlo();
+hi();
+const yeahbuddy = personName => {
+    console.log(`Yeahhh! ${personName}`);
+}
+const bro = (personName, age) => {
+    console.log(`Yeahhh! ${personName} you are ${age} years old`);
+}
+yeahbuddy("Soam");
+bro("Soam", 20);
