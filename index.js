@@ -397,20 +397,20 @@ console.log(person1.isEmployed);
 
 // classes in js
 // class = (ES6 feature) provides a more structured and cleaner way to work with objects compared to traditional constructor functions ex. static keyword, encapsulation, inheritance
-class Product {
-    constructor(name, price) {
-        this.name = name;
-        this.price = price;
-    }
-    displayProduct = function () {
-        console.log(`Product: ${this.name}`);
-        console.log(`price: ${this.price.toFixed(2)}`);
-    }
-    calculateTotal = function (salesTax) {
-        return this.price + (this.price * salesTax);
-    }
+// class Product {
+//     constructor(name, price) {
+//         this.name = name;
+//         this.price = price;
+//     }
+//     displayProduct = function () {
+//         console.log(`Product: ${this.name}`);
+//         console.log(`price: ${this.price.toFixed(2)}`);
+//     }
+//     calculateTotal = function (salesTax) {
+//         return this.price + (this.price * salesTax);
+//     }
 
-}
+// }
 
 // function Product(name, price) {
 //     this.name = name;
@@ -424,15 +424,15 @@ class Product {
 //     }
 // }
 
-const salesTax = 0.05;
-const product1 = new Product("Shirt", 15.99);
-const product2 = new Product("Pants", 19.99);
-const product3 = new Product("underwear", 109.99);
+// const salesTax = 0.05;
+// const product1 = new Product("Shirt", 15.99);
+// const product2 = new Product("Pants", 19.99);
+// const product3 = new Product("underwear", 109.99);
 
-product1.displayProduct();
+// product1.displayProduct();
 
-const totalPrices = product1.calculateTotal(salesTax);
-console.log(`Total price with tax: ${totalPrices}`);
+// const totalPrices = product1.calculateTotal(salesTax);
+// console.log(`Total price with tax: ${totalPrices}`);
 
 
 // static keyword in js
@@ -452,3 +452,52 @@ console.log(`Total price with tax: ${totalPrices}`);
 // setter = special method that makes a property writable
 // validate and modify a value when reading or writing a property
 
+
+// destructuring = extract values from arrays and objects, then assign to variables in a convenient way
+// [] to perform array destructuring
+// {} to perfrom object destructuring
+// 5 examples :-
+
+
+/*
+// ex1 :- swap the values of two varaibles
+let a = 1, b = 2;
+[a, b] = [b, a];
+console.log(a);
+console.log(b);
+
+// ex1 :- swap 2 elements in an array
+const colors = ["red", "green", "blue", "black", "white"];
+[colors[0], colors[4]] = [colors[4], colors[0]];
+console.log(colors);
+
+// ex3 = assign array elements to variables 
+const [firstColor, secondcolor, thirColor, ...extraColors] = colors;
+console.log(firstColor);
+console.log(secondcolor);
+console.log(thirColor);
+console.log(extraColors);
+
+// ex4  = extract values from objects
+const person1 = {
+    firstName: "Spongebob",
+    lastName: "Squarepants",
+    age: 30,
+    job: "Fry cook"
+};
+const person2 = {
+    firstName: "Tony",
+    lastName: "Stark",
+    age: 39,
+};
+
+const { firstName, lastName, age, job } = person1;
+console.log(firstName, lastName, age, job);
+
+// ex5:- destructure in function parameters
+function displayPerson({ firstName, lastName, age, job = "unemployed" }) {
+    console.log(firstName, lastName, age, job);
+}
+displayPerson(person2);
+
+*/
