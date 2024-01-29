@@ -675,7 +675,68 @@ console.log(currCount);
 // console.dir(document);
 // document.body.style.backgroundColor = "hsl(0,0%,15%)";
 
+/*
 // const username = "Akash Soam";
 const username = "";
 const welcomeMsg = document.getElementById("welcome-msg");
 welcomeMsg.textContent = username !== "" ? `Welcome ${username}` : `Welcome Guest`;
+*/
+
+// element selectors in js
+// element selector = methods used to target and manipulate html elements. They allow you to select one or multiple html elements form DOM (Document Object model);
+
+// 1. document.getElementById() //ELEMENT OR NULL
+// 2.document.getElementsByClassName() //HTML COLLECTION
+// 3. document.getElementsByTagName() //HTML COLLECTION
+// 4. docuement.querySelector() // FIRST ELEMENT OR NULL
+// 5. document.querySelectorAll() // NODELIST
+// html collection is similar to an array but its limited to its builtin methods it has
+
+// node list are similar to html collections but it has methods similar to arrays. However node lists are static and html collections are live.
+// since nodelist are static they do not get updated automatically in the dom , html collections do.
+
+document.getElementById('welcome-msg').textContent = "Yo dawg";
+
+const fruits = document.getElementsByClassName("fruits");
+console.log(fruits);// this is an html collection
+
+
+fruits[0].style.backgroundColor = "yellow";
+fruits[1].style.backgroundColor = "orange";
+for (let fruit of fruits) {
+    fruit.style.backgroundColor = "pink";
+}
+
+// fruits.forEach()
+// HTML COLLECTION do not have builtin forEach
+
+Array.from(fruits).forEach(fruit => {
+    fruit.style.backgroundColor = "magenta"
+});
+
+const h4Elements = document.getElementsByTagName("h4");
+const liElements = document.getElementsByTagName("li");
+console.log(h4Elements);
+h4Elements[0].style.backgroundColor = "gold"
+h4Elements[1].style.backgroundColor = "silver"
+
+for (let liElement of liElements) {
+    liElement.style.backgroundColor = "yellowgreen";
+}
+
+Array.from(liElements).forEach((liElement) => {
+    liElement.style.backgroundColor = "cyan";
+});
+
+
+const element = document.querySelector(".fruits");
+element.style.backgroundColor = "purple";
+
+
+const fruitss = document.querySelectorAll(".fruits");
+//nodelist has builtin forEach() method 
+fruitss.forEach(fr => {
+    fr.style.backgroundColor = "grey";
+});
+
+
