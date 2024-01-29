@@ -647,3 +647,19 @@ console.log(currCount);
 // }
 
 // fun1(func2);
+
+
+// Error = an object that is created to represent a problem that occurs
+// Occur often with user input or establishing a connection
+// NETWORK ERRORS
+// PROMISE REJECTION
+// SECURITY ERRORS
+
+// try{}
+// catch{}
+// finally{} blocks
+
+// try { } = Encloses code that might potentially cause an error
+// catch { } = Catch and handle any thrown Errors from try { }
+// finally { } = (optional) Always executes. Used mostly for clean up
+// ex. close files, close connections, release resources
