@@ -695,6 +695,8 @@ welcomeMsg.textContent = username !== "" ? `Welcome ${username}` : `Welcome Gues
 // node list are similar to html collections but it has methods similar to arrays. However node lists are static and html collections are live.
 // since nodelist are static they do not get updated automatically in the dom , html collections do.
 
+/*
+
 document.getElementById('welcome-msg').textContent = "Yo dawg";
 
 const fruits = document.getElementsByClassName("fruits");
@@ -734,9 +736,38 @@ element.style.backgroundColor = "purple";
 
 
 const fruitss = document.querySelectorAll(".fruits");
-//nodelist has builtin forEach() method 
+//nodelist has builtin forEach() method
 fruitss.forEach(fr => {
     fr.style.backgroundColor = "grey";
 });
 
+
+*/
+
+// DOM NAVIGATION = The process of navigating throught the structure of an HTML document using JS.
+
+// .firstElementChild
+// .lastElementChild
+// .nextElementSibling
+// .previousElementSibling
+// .parentElement
+// .children
+
+const element = document.getElementById("fruits");
+const firstChild = element.firstElementChild;
+firstChild.style.backgroundColor = "pink";
+
+const ele = document.querySelectorAll("ul");
+ele.forEach(e => {
+    const firstChild = e.firstElementChild;
+    const lastChild = e.lastElementChild;
+    firstChild.style.backgroundColor = "silver";
+    lastChild.style.backgroundColor = "gold";
+});
+
+const e = document.getElementById("orange");
+const nextSibling = e.nextElementSibling;
+const previousSibling = e.previousElementSibling;
+nextSibling.style.backgroundColor = "cyan";
+previousSibling.style.backgroundColor = "cyan";
 
