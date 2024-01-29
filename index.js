@@ -605,3 +605,45 @@ console.log(currCount);
 // setTimeout(callback, delay);
 
 
+
+// ES6 MODULE IN JS
+// = an external file that contains reusable code that can be imported into other javascript files.
+// write reusable code for many different apps.
+// can contain variables, classes, functions, ...and more introduced as part of ECMAScript 2015 update
+// use of import and export keyword
+
+
+// synchronous and asynchronous programming in js
+
+// synchronous = executes line by line consecutively in a sequential manner. Code that waits for an operation to complete
+
+// asynchronous = allows multiple operations to be performed concurrently without waiting. Doesn't block the execution flow and allows the program to continue (I/O operations, network requests, fetching data)
+// handled with callbacks, promises, Async/Await
+
+// setTimeout(callback, timeout) is also an asynchronous methods
+
+// setTimeout(() => {
+//     console.log("this is task 1");
+// }, 3000);
+
+// console.log('THis is task 2');
+// console.log('THis is task 3');
+// console.log('THis is task 4');
+
+//here you can see that program doesn't have to wait for task 1. inorder to complete task 2, 3, 4;(then at last task1 is completed after 3s)
+
+// but if you want task 2, 3, 4 to be executed after completion of task1 , then, you can use callback
+
+// function fun1(callback) {
+//     setTimeout(() => {
+//         console.log("this is task 1");
+//         callback();
+//     }, 3000);
+// }
+// function func2() {
+//     console.log('THis is task 2');
+//     console.log('THis is task 3');
+//     console.log('THis is task 4');
+// }
+
+// fun1(func2);
