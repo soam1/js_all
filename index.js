@@ -663,3 +663,19 @@ console.log(currCount);
 // catch { } = Catch and handle any thrown Errors from try { }
 // finally { } = (optional) Always executes. Used mostly for clean up
 // ex. close files, close connections, release resources
+
+//
+// DOM  = DOCUMENT OBJECT MODEL
+// object{} that represents the page you see in the web browser and provides you with an API to interact with it. Web browser constructs the DOM when it loads an HTML document, and structures all the elements in a tree like representation . Javascript can access the DOM  to dynamically change the content, structure, and style of a web page.
+
+
+// console.log(document);
+// console.dir(document);
+// document.title = "My website pro";
+// console.dir(document);
+// document.body.style.backgroundColor = "hsl(0,0%,15%)";
+
+// const username = "Akash Soam";
+const username = "";
+const welcomeMsg = document.getElementById("welcome-msg");
+welcomeMsg.textContent = username !== "" ? `Welcome ${username}` : `Welcome Guest`;
