@@ -1035,7 +1035,8 @@ walkTheDog(() => {
 
 // instead of using callbacks we'll use method chaining and wrap this asynchronous code inside a Promise object
 
-// using promise 
+// using promise
+/*
 function walkTheDog() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -1083,3 +1084,91 @@ walkTheDog().then(value => {
 }).catch((err) => {
     console.log(err);
 });
+*/
+
+// async/await in js
+// async/await = Async = makes a function return a promise
+//              Await = makes a async function wait for a promise
+// allow you to write asynchronous code in a synchronous manner
+// async doesn't have resolve or reject parameters
+// everything after Await is placed in an event queue
+
+// using async and await you can write asynchronous code in a synchronous manner
+
+function walkTheDog() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const dogwalked = true;
+            // const dogwalked = false;
+            if (dogwalked)
+                resolve("you walk the 🐕");
+            else reject("you didn't walk the dog!?");
+        }, 1500);
+    });
+}
+function cleanKitchen() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const cleaned = true;
+            // const cleaned = false;
+            if (cleaned)
+                resolve("you cleaned the kitchen 🧹");
+            else reject("you DIDN'T clean it!?");
+        }, 2500);
+    });
+}
+function takeOutTrash() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // const trashOut = true;
+            const trashOut = false;
+            if (trashOut)
+                resolve("you took out the trash 🚮");
+            else reject("you DIDN'T took it(trash) out!?");
+        }, 1000);
+    });
+}
+
+/*
+async function doChores() {
+    const walkDogResult = await walkTheDog();
+    console.log(walkDogResult);
+    const cleanTheKitchenResult = await cleanKitchen();
+    console.log(cleanTheKitchenResult);
+    const takeOutTrashResult = await takeOutTrash();
+    console.log(takeOutTrashResult);
+    console.log("Yo! dawg you did all the chores");
+}
+
+doChores();
+*/
+
+// function doChores() {
+//     const walkDogResult = await walkTheDog();
+//     console.log(walkDogResult);
+//     const cleanTheKitchenResult = await cleanKitchen();
+//     console.log(cleanTheKitchenResult);
+//     const takeOutTrashResult = await takeOutTrash();
+//     console.log(takeOutTrashResult);
+//     console.log("Yo! dawg you did all the chores");
+// }
+
+// removing async from method lead to syntax errors in using await
+// await can only be called in async functions
+
+async function doChores() {
+    try {
+        const walkDogResult = await walkTheDog();
+        console.log(walkDogResult);
+        const cleanTheKitchenResult = await cleanKitchen();
+        console.log(cleanTheKitchenResult);
+        const takeOutTrashResult = await takeOutTrash();
+        console.log(takeOutTrashResult);
+        console.log("Yo! dawg you did all the chores");
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+doChores();
