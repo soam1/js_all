@@ -913,6 +913,7 @@ myButton.addEventListener("click", event => {
 // NodeList won't update to automatically reflect changes
 
 
+/*
 let buttons = document.querySelectorAll(".myButtons");
 console.log(buttons);//this returned a nodelist of buttons
 
@@ -957,3 +958,28 @@ buttons.forEach(button => {
 });
 // this works
 //the only way to make a change in the node list is by re assigning the node list.
+
+
+*/
+
+// classList in js
+// classList = element property in js used to interact with an element's list of classes(CSS classes)
+// allows you to make reusable classes for many elements across your webpage.
+
+
+// add()
+// remove()
+// toggle (remove if present , add if not)
+// replace(oldClass, newClass)
+// contains()
+
+const myButton = document.getElementById("myButton");
+myButton.classList.add("enabled");
+myButton.classList.remove("enabled");
+
+myButton.addEventListener("mouseover", event => {
+    myButton.classList.add("hover");
+});
+myButton.addEventListener("mouseout", event => {
+    myButton.classList.remove("hover");
+});
