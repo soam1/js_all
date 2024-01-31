@@ -973,6 +973,7 @@ buttons.forEach(button => {
 // replace(oldClass, newClass)
 // contains()
 
+/*
 const myButton = document.getElementById("myButton");
 myButton.classList.add("enabled");
 myButton.classList.remove("enabled");
@@ -982,4 +983,103 @@ myButton.addEventListener("mouseover", event => {
 });
 myButton.addEventListener("mouseout", event => {
     myButton.classList.remove("hover");
+});
+*/
+
+// callback hell
+// callback hell = situation in js where callbacks are nested within other callbacks to the degree where the code is difficult to read.
+// old pattern to handle asynchronous functions.
+// use promises + async/await to avoid callback hell.
+
+// Promises in js
+// Promise = An object that manages asynchronous operations. Wrap a promise object around {asynchronous code}
+// "I promise to return a value"
+// PENDING -> RESOLVED OR REJECTED
+// new Promise ((resolve, reject) => {asynchronous code})
+
+// DO THESE CHORES IN ORDER:-
+// 1.WALK THE DOG
+// 2.CLEAN THE KITCHEN
+// 3.TAKE OUT THE TRASH
+
+/*
+
+function walkTheDog(callback) {
+    setTimeout(() => {
+        console.log("you walk the 🐕");
+        callback();
+    }, 1500);
+}
+function cleanKitchen(callback) {
+    setTimeout(() => {
+        console.log("you cleaned the kitchen 🧹");
+        callback();
+    }, 2500);
+}
+function takeOutTrash(callback) {
+    setTimeout(() => {
+        console.log("you took out the trash 🚮");
+        callback();
+    }, 1000);
+}
+
+//first using callbacks
+walkTheDog(() => {
+    cleanKitchen(() => {
+        takeOutTrash(() =>
+            console.log("Morning chores completed👍")
+        );
+    });
+});
+*/
+
+// instead of using callbacks we'll use method chaining and wrap this asynchronous code inside a Promise object
+
+// using promise 
+function walkTheDog() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const dogwalked = true;
+            // const dogwalked = false;
+            if (dogwalked)
+                resolve("you walk the 🐕");
+            else reject("you didn't walk the dog!?");
+        }, 1500);
+    });
+}
+function cleanKitchen() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const cleaned = true;
+            // const cleaned = false;
+            if (cleaned)
+                resolve("you cleaned the kitchen 🧹");
+            else reject("you DIDN'T clean it!?");
+        }, 2500);
+    });
+}
+function takeOutTrash() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // const cleaned = true;
+            const trashOut = false;
+            if (trashOut)
+                resolve("you took out the trash 🚮");
+            else reject("you DIDN'T took it(trash) out!?");
+        }, 1000);
+    });
+}
+
+
+walkTheDog().then(value => {
+    console.log(value);
+    return cleanKitchen();
+}).then(value => {
+    console.log(value);
+    return takeOutTrash();
+}).then((value) => {
+    console.log(value);
+    console.log("All the chores are done");
+}).catch((err) => {
+    console.log(err);
 });
