@@ -839,7 +839,7 @@ myBox.addEventListener("mouseout", event => {
 
 // key events
 // events: keydown, keyup, keypress(isn't compatile)
-const myBox = document.getElementById("myBox");
+// const myBox = document.getElementById("myBox");
 // document.addEventListener("keydown", event => {
 //     // console.log(event);
 //     myBox.style.backgroundColor = "Pink";
@@ -851,6 +851,7 @@ const myBox = document.getElementById("myBox");
 //     myBox.textContent = "😎"
 
 // });
+/*
 
 const moveAmount = 20;
 let x = 0, y = 0;
@@ -881,3 +882,23 @@ document.addEventListener("keydown", event => {
 
 
 });
+*/
+
+// hide/show an element of html
+const myButton = document.getElementById("myButton");
+const myImg = document.getElementById("myImg");
+
+myButton.addEventListener("click", event => {
+    // if (myImg.style.display === "none") {
+    if (myImg.style.visibility === "hidden") {
+        // myImg.style.display = "block";
+        myImg.style.visibility = "visible";
+        myButton.textContent = "hide";
+    } else {
+        // myImg.style.display = "none";
+        myImg.style.visibility = "hidden";
+        myButton.textContent = "show";
+    }
+
+});
+
