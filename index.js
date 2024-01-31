@@ -784,6 +784,8 @@ previousSibling.style.backgroundColor = "cyan";
 
 // -------------------example1 <h1> -----------------
 
+
+/*
 // STEP 1 CREATE THE ELEMENT
 const newH1 = document.createElement("h1");
 
@@ -800,4 +802,37 @@ document.getElementById('box1').append(newH1);
 document.getElementById('box1').prepend(newH1);
 
 // STEP 4 REMOVE HTML ELEMENT
+// anytime you want to remove an element, select parent of that element and then call .removeChild(thatElement)
 document.getElementById("box1").removeChild(newH1);
+
+*/
+
+// MOUSE EVENTS
+// eventListener = listen for specific events to create interactive web pages
+// events: click, mouseover, mouseout
+// .addEventListener(event, callback);
+
+/*
+const myBox = document.getElementById("myBox");
+function changeColor(event) {
+    // console.log(event);
+    event.target.style.backgroundColor = "tomato";
+    event.target.textContent = "Ouch! 😬";
+}
+// event is an object that is provided to us behind the scenes by a web browser, we dont't need to pass event explicitly;
+// myBox.addEventListener("click", changeColor);
+myBox.addEventListener("click", (event) => {
+    event.target.style.backgroundColor = "tomato";
+    event.target.textContent = "Ouch! 🥲";
+});
+
+myBox.addEventListener("mouseover", event => {
+    event.target.style.backgroundColor = "red";
+    event.target.textContent = "please don't 😬";
+});
+myBox.addEventListener("mouseout", event => {
+    event.target.style.backgroundColor = "lightgreen";
+    event.target.textContent = "click Me😁";
+});
+
+*/
