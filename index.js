@@ -836,3 +836,48 @@ myBox.addEventListener("mouseout", event => {
 });
 
 */
+
+// key events
+// events: keydown, keyup, keypress(isn't compatile)
+const myBox = document.getElementById("myBox");
+// document.addEventListener("keydown", event => {
+//     // console.log(event);
+//     myBox.style.backgroundColor = "Pink";
+//     myBox.textContent = "😲"
+// });
+// document.addEventListener("keyup", event => {
+//     // console.log(event);
+//     myBox.style.backgroundColor = "lightgreen";
+//     myBox.textContent = "😎"
+
+// });
+
+const moveAmount = 20;
+let x = 0, y = 0;
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("Arrow")) {
+        event.preventDefault();
+        switch (event.key) {
+            case "ArrowUp":
+                y = y - moveAmount;
+                break;
+            case "ArrowLeft":
+                x = x - moveAmount;
+                break;
+            case "ArrowRight":
+                x = x + moveAmount;
+                break;
+            case "ArrowDown":
+                y = y + moveAmount;
+                break;
+
+            default:
+                break;
+        }
+        myBox.style.top = `${y}px`
+        myBox.style.left = `${x}px`
+
+    }
+
+
+});
