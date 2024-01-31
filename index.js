@@ -885,6 +885,8 @@ document.addEventListener("keydown", event => {
 */
 
 // hide/show an element of html
+
+/*
 const myButton = document.getElementById("myButton");
 const myImg = document.getElementById("myImg");
 
@@ -902,3 +904,56 @@ myButton.addEventListener("click", event => {
 
 });
 
+
+*/
+// NODELISTS
+// NodeList = static collection of html elements by(id, class, element)
+// can be created by using querySelectorAll()
+// Similar to an array, but no map(), filter(), reduce()
+// NodeList won't update to automatically reflect changes
+
+
+let buttons = document.querySelectorAll(".myButtons");
+console.log(buttons);//this returned a nodelist of buttons
+
+// buttons.forEach(b => {
+//     b.style.backgroundColor = "green";
+//     b.textContent = "Yo bro";
+// });
+
+buttons.forEach(button => {
+    button.addEventListener("click", event => {
+        event.target.style.backgroundColor = "orange";
+    });
+});
+
+const newButton = document.createElement("button");
+newButton.textContent = "Button 5";
+newButton.classList = "myButtons";
+document.body.appendChild(newButton);
+console.log(buttons);//this returned a nodelist of buttons
+// now we have 5 buttons withing our DOM but 4 buttons in our nodeList
+
+buttons = document.querySelectorAll(".myButtons");
+console.log(buttons);
+
+
+//now how to remove an element from the nodelist
+// buttons.forEach(button => {
+//     button.addEventListener("click", event => {
+//         event.target.remove();
+//         console.log(buttons);
+//     });
+// });
+// above code removes the button from DOM , when clicked .
+// but still the nodelist contains all 5 buttons
+
+buttons.forEach(button => {
+    button.addEventListener("click", event => {
+        event.target.remove();
+        buttons = document.querySelectorAll(".myButtons");
+        console.log(buttons);
+    });
+});
+// this works
+//the only way to make a change in the node list is by re assigning the node list.
