@@ -1095,6 +1095,7 @@ walkTheDog().then(value => {
 
 // using async and await you can write asynchronous code in a synchronous manner
 
+/*
 function walkTheDog() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -1129,19 +1130,18 @@ function takeOutTrash() {
     });
 }
 
-/*
-async function doChores() {
-    const walkDogResult = await walkTheDog();
-    console.log(walkDogResult);
-    const cleanTheKitchenResult = await cleanKitchen();
-    console.log(cleanTheKitchenResult);
-    const takeOutTrashResult = await takeOutTrash();
-    console.log(takeOutTrashResult);
-    console.log("Yo! dawg you did all the chores");
-}
 
-doChores();
-*/
+// async function doChores() {
+//     const walkDogResult = await walkTheDog();
+//     console.log(walkDogResult);
+//     const cleanTheKitchenResult = await cleanKitchen();
+//     console.log(cleanTheKitchenResult);
+//     const takeOutTrashResult = await takeOutTrash();
+//     console.log(takeOutTrashResult);
+//     console.log("Yo! dawg you did all the chores");
+// }
+
+// doChores();
 
 // function doChores() {
 //     const walkDogResult = await walkTheDog();
@@ -1172,3 +1172,127 @@ async function doChores() {
 }
 
 doChores();
+*/
+
+
+// JSON  = (JavaScript Object Notation) data interchange formate used for exchanging data between a server and a web application
+// JSON files {key:value} or {value1, value2, value3}
+
+// JSON.stringify() = converts a JS object to a JSON string.
+// JSON.parse() = converts a JSON string to a JS object.
+
+const names = ["Tom", "Cruise", "John", "Wick"];
+const jsonString = JSON.stringify(names);
+
+console.log(jsonString);
+
+const person = {
+    name: "Akash",
+    age: "20",
+    isEmployed: true,
+    hobbies: [
+        "learning martial arts",
+        "cooking"
+    ],
+};
+const people = [
+    {
+        "name": "Soam",
+        "age": 21,
+        "isEmployed": true,
+        "hobbies": [
+            "karate",
+            "cooking",
+            "trying new exercises"
+        ]
+    },
+    {
+        "name": "Akash",
+        "age": 20,
+        "isEmployed": true,
+        "hobbies": [
+            "boxing",
+            "cooking",
+            "gym"
+        ]
+    },
+    {
+        "name": "Atul",
+        "age": 20,
+        "isEmployed": true,
+        "hobbies": [
+            "CP",
+            "ml",
+            "researching facts"
+        ]
+    }
+];
+const jsonPerson = JSON.stringify(person);
+
+console.log(person);
+console.log(jsonPerson);
+console.log(people);
+
+
+const names1json = `["Tom", "Cruise", "John", "Wick"]`;
+
+const person1json = `{
+    "name": "Akash",
+    "age": 20,
+    "isEmployed": true,
+    "hobbies": [
+        "learning martial arts",
+        "cooking"
+    ],
+}`;
+
+const people1json = `[
+    {
+        "name": "Soam",
+        "age": 21,
+        "isEmployed": true,
+        "hobbies": [
+            "karate",
+            "cooking",
+            "trying new exercises"
+        ]
+    },
+    {
+        "name": "Akash",
+        "age": 20,
+        "isEmployed": true,
+        "hobbies": [
+            "boxing",
+            "cooking",
+            "gym"
+        ]
+    },
+    {
+        "name": "Atul",
+        "age": 20,
+        "isEmployed": true,
+        "hobbies": [
+            "CP",
+            "ml",
+            "researching facts"
+        ]
+    }
+]`;
+
+
+console.log(names1json);
+console.log(person1json);
+console.log(people1json);
+
+console.log(JSON.parse(names1json));
+// console.log(JSON.parse(person1json));
+console.log(JSON.parse(people1json));
+
+
+fetch("person.json")
+    .then(response => response.json())
+    .then(value => console.log(value));
+
+fetch("names.json")
+    .then(response => response.json())
+    .then(value => console.log(value));

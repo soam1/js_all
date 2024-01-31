@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Soam",
+        "age": 21,
+        "isEmployed": true,
+        "hobbies": [
+            "karate",
+            "cooking",
+            "trying new exercises"
+        ]
+    },
+    {
+        "name": "Akash",
+        "age": 20,
+        "isEmployed": true,
+        "hobbies": [
+            "boxing",
+            "cooking",
+            "gym"
+        ]
+    },
+    {
+        "name": "Atul",
+        "age": 20,
+        "isEmployed": true,
+        "hobbies": [
+            "CP",
+            "ml",
+            "researching facts"
+        ]
+    }
+]
