@@ -1181,6 +1181,8 @@ doChores();
 // JSON.stringify() = converts a JS object to a JSON string.
 // JSON.parse() = converts a JSON string to a JS object.
 
+/*
+
 const names = ["Tom", "Cruise", "John", "Wick"];
 const jsonString = JSON.stringify(names);
 
@@ -1296,3 +1298,5 @@ fetch("person.json")
 fetch("names.json")
     .then(response => response.json())
     .then(value => console.log(value));
+
+*/
